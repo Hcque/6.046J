@@ -1,26 +1,41 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-struct node {
-    int *min, *max;
-    node* summary;
-    node* clusters[];
-    node() : min(nullptr), max(nullptr) {};
+#define high(x) ((int) (x/sqrt(u)))
+#define low(x) ((int) (x%(int)sqrt(u)))
+
+const int u = 16;
+
+class vebTree{
+    // int u;
+    int min_, max_, w;
+    int *summary;
+    int **clusters;
+    vebTree() {
+        this->w = sqrt(u);
+        min_ = max_ = -1;
+        summary = nullptr;
+        clusters = new int*[w];
+        for (int i = 0; i < w; i++){
+            clusters[i] = nullptr;
+        }
+    }
+    void insert(int * V, int x){
+
+        if (this->clusters[high(x)] == nullptr)
+            insert(this->summary, high(x));
+        insert(this->clusters[high(x)], low(x));
+    }
+    int successor(int x){
+
+    }
+    
 };
 
-node* vebTree(){
-    return new node;
-}
 
 
-void insert(node* V, int x){
-    if (V->min == nullptr)
-        V->min =
-    
-}
-int successor(){
 
-}
 
 
 
