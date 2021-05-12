@@ -13,7 +13,6 @@ const int vertex = 7;
 unordered_set<int> S;
 vector<int> V, keys, pare;
 priority_queue<pa, vector<pa>, greater<pa>> minE;
-int G[vertex][vertex] = {0};
 int W[vertex][vertex] = {
                     {0,2,3,3,0,0,0},
                     {2,0,4,0,3,0,0},
@@ -30,16 +29,6 @@ void init(){
         keys.push_back(INF);
         pare.push_back(INF);
     }
-    // G[0][1] = 1; W[0][1] = 2;
-    // G[0][2] = 1; W[0][2] = 3;
-    // G[0][3] = 1;W[0][3] = 3;
-    // G[1][2] = 1;W[1][2] = 4;
-    // G[1][4] = 1;W[1][4] = 3;
-    // G[2][5] = 1;W[2][5] = 6;
-    // G[2][4] = 1;W[2][4] = 1;
-    // G[3][5] = 1;W[3][5] = 7;
-    // G[4][5] = 1;W[4][5] = 8;
-    // G[5][6] = 1;W[5][6] = 9;
 }
 void add_queue(int x){
     for (int y = 0; y < 7; y++){
@@ -63,6 +52,7 @@ void MST_PRIM(int r = 0){
         minE.pop();
 
         if (c < keys[v]) {
+            cout << "u: v: " << u << c << v << endl;
             keys[v] = c;
             pare[v] = u;
             S.insert(u);

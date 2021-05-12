@@ -9,13 +9,15 @@ struct Node {
         Node* left;
         Node* right;
         int height;
-} ;
+};
 
 template <typename T>
 class BSTNode{
         //todo
 
-    Node<T>* find(T k);
+    Node<T>* find(T k){
+
+    }
     Node<T>* find_min(T k);
     Node<T>* next_larger(Node<T>* x);
     void insert(T k);
