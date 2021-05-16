@@ -67,7 +67,6 @@ class FordFulkerson{
 
             value += bottle;
         }
-
     }
 
 };
