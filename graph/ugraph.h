@@ -5,5 +5,4 @@
 template<typename N, typename E>
 class UnGraph : public Graph<N, E> {
 
-template<typename N, typename E>
 };

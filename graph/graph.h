@@ -1,3 +1,7 @@
+#pragma once
+
+// #ifndef GRAPH_H
+// #define GRAPH_H
 #include <unordered_map>
 #include <queue>
 #include <vector>
@@ -38,7 +42,7 @@ protected:
     void searchInit(int id);
     void relax(int uid, int vid);
 public:
-    bool addNode(int id, N& data);
+    bool addNode(int id, const N& data);
     // virtual bool addEdge(int uid, int vid, E& e) = 0;
     // virtual bool removeNode(int id) = 0;
     // virtual bool removeEdge(int uid, int vid) = 0;
@@ -101,7 +105,7 @@ void Graph<N, E>::DFSVisit(int id){
 
 
 template <typename N, typename E>
-bool Graph<N, E>::addNode(int id, N& data){
+bool Graph<N, E>::addNode(int id, const N& data){
     if (this->V.find(id) == this->V.end()) return false;
     V[id] = new Vertex<N, E>(data);
     return true;
@@ -117,3 +121,4 @@ void Graph<N, E>::relax(int uid, int vid){
 
 
 
+// #endif
